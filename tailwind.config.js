@@ -16,5 +16,9 @@ export default {
             },
         },
     },
-    plugins: [],
+    plugins: [require('daisyui'),
+],
+daisyui: {
+    themes: ["light"], // Kamu bisa pilih tema lain nanti
+  },
 };
