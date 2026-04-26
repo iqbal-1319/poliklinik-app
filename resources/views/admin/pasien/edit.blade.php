@@ -30,9 +30,11 @@
                         </label>
                         <input type="text" name="nama" value="{{ old('nama', $pasien->nama) }}"
                             placeholder="Masukkan nama pasien..."
-                            class="w-full px-4 py-2 rounded-lg border-2 border-slate-300 
-                                   focus:border-primary focus:outline-none
-                                   @error('nama') border-red-500 @enderror"
+                            @class([
+                                'w-full px-4 py-2 rounded-lg border-2 focus:border-primary focus:outline-none',
+                                'border-red-500' => $errors->has('nama'),
+                                'border-slate-300' => !$errors->has('nama'),
+                            ])
                             required>
                         @error('nama')
                         <p class="text-xs text-red-500 mt-1">{{ $message }}</p>
@@ -46,9 +48,11 @@
                         </label>
                         <input type="email" name="email" value="{{ old('email', $pasien->email) }}"
                             placeholder="Masukkan email..."
-                            class="w-full px-4 py-2 rounded-lg border-2 border-slate-300 
-                                   focus:border-primary focus:outline-none
-                                   @error('email') border-red-500 @enderror"
+                            @class([
+                                'w-full px-4 py-2 rounded-lg border-2 focus:border-primary focus:outline-none',
+                                'border-red-500' => $errors->has('email'),
+                                'border-slate-300' => !$errors->has('email'),
+                            ])
                             required>
                         @error('email')
                         <p class="text-xs text-red-500 mt-1">{{ $message }}</p>
@@ -62,9 +66,11 @@
                         </label>
                         <input type="number" name="no_ktp" value="{{ old('no_ktp', $pasien->no_ktp) }}"
                             placeholder="Masukkan No. KTP..."
-                            class="w-full px-4 py-2 rounded-lg border-2 border-slate-300 
-                                   focus:border-primary focus:outline-none
-                                   @error('no_ktp') border-red-500 @enderror"
+                            @class([
+                                'w-full px-4 py-2 rounded-lg border-2 focus:border-primary focus:outline-none',
+                                'border-red-500' => $errors->has('no_ktp'),
+                                'border-slate-300' => !$errors->has('no_ktp'),
+                            ])
                             required>
                         @error('no_ktp')
                         <p class="text-xs text-red-500 mt-1">{{ $message }}</p>
@@ -78,9 +84,11 @@
                         </label>
                         <input type="number" name="no_hp" value="{{ old('no_hp', $pasien->no_hp) }}"
                             placeholder="Masukkan No. HP..."
-                            class="w-full px-4 py-2 rounded-lg border-2 border-slate-300 
-                                   focus:border-primary focus:outline-none
-                                   @error('no_hp') border-red-500 @enderror"
+                            @class([
+                                'w-full px-4 py-2 rounded-lg border-2 focus:border-primary focus:outline-none',
+                                'border-red-500' => $errors->has('no_hp'),
+                                'border-slate-300' => !$errors->has('no_hp'),
+                            ])
                             required>
                         @error('no_hp')
                         <p class="text-xs text-red-500 mt-1">{{ $message }}</p>
@@ -95,9 +103,11 @@
                         Alamat <span class="text-red-500">*</span>
                     </label>
                     <textarea name="alamat" rows="3" placeholder="Masukkan alamat..."
-                        class="w-full px-4 py-2 rounded-lg border-2 border-slate-300 
-                               focus:border-primary focus:outline-none
-                               @error('alamat') border-red-500 @enderror"
+                        @class([
+                            'w-full px-4 py-2 rounded-lg border-2 focus:border-primary focus:outline-none',
+                            'border-red-500' => $errors->has('alamat'),
+                            'border-slate-300' => !$errors->has('alamat'),
+                        ])
                         required>{{ old('alamat', $pasien->alamat) }}</textarea>
                     @error('alamat')
                     <p class="text-xs text-red-500 mt-1">{{ $message }}</p>
@@ -111,9 +121,11 @@
                     </label>
                     <input type="password" name="password"
                         placeholder="Kosongkan jika tidak ingin mengubah..."
-                        class="w-full px-4 py-2 rounded-lg border-2 border-slate-300 
-                               focus:border-primary focus:outline-none
-                               @error('password') border-red-500 @enderror">
+                        @class([
+                            'w-full px-4 py-2 rounded-lg border-2 focus:border-primary focus:outline-none',
+                            'border-red-500' => $errors->has('password'),
+                            'border-slate-300' => !$errors->has('password'),
+                        ])>
                     @error('password')
                     <p class="text-xs text-red-500 mt-1">{{ $message }}</p>
                     @enderror
