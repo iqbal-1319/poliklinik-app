@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Poli;
 use App\Models\User;
+use App\Models\JadwalPeriksa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -12,8 +13,14 @@ class DokterController extends Controller
 {
     public function index()
     {
+        // 1. Ambil data dokter
         $dokters = User::where('role', 'dokter')->with('poli')->get();
-        return view('admin.dokter.index', compact('dokters'));
+
+        // 2. Ambil data jadwal periksa (INI YANG PENTING BIAR GAK ERROR)
+        $jadwalPeriksas = JadwalPeriksa::all(); 
+
+        // 3. Kirim SEMUA variabelnya ke view
+        return view('admin.dokter.index', compact('dokters', 'jadwalPeriksas'));
     }
 
     public function create()

@@ -1,4 +1,4 @@
-<x-layouts.app title="Periksa Pasien">
+<x-app-layout title="Periksa Pasien">
 
     {{-- Header --}}
     <div class="flex items-center gap-3 mb-6">
@@ -139,4 +139,4 @@
         }
     </script>
 
-</x-layouts.app>
+</x-app-layout>

@@ -1,4 +1,4 @@
-<x-layouts.app title="Edit Poli">
+<x-app-layout title="Edit Poli">
 
     {{-- Header --}}
     <div class="flex items-center gap-3 mb-6">
@@ -75,4 +75,4 @@
         </div>
     </div>
 
-</x-layouts.app>
+    </x-app-layout>

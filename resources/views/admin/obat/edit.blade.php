@@ -1,4 +1,4 @@
-<x-layouts.app title="Edit Obat">
+<x-app-layout title="Edit Obat">
 
 
     {{-- Header --}}
@@ -111,4 +111,4 @@
     </div>
 
 
-</x-layouts.app>
+    </x-app-layout>

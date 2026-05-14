@@ -1,4 +1,4 @@
-<x-layouts.app title="Edit Pasien">
+<x-app-layout title="Edit Pasien">
 
     {{-- Header --}}
     <div class="flex items-center gap-3 mb-6">
@@ -135,7 +135,7 @@
                 <div class="flex gap-3">
                     <button type="submit"
                         class="px-6 py-2.5 rounded-lg bg-primary hover:bg-primary/90 
-                               text-white font-semibold text-sm transition">
+                               text-slate-600 font-semibold text-sm transition">
                         <i class="fas fa-save mr-1"></i> Update
                     </button>
 
@@ -150,4 +150,4 @@
         </div>
     </div>
 
-</x-layouts.app>
+    </x-app-layout>

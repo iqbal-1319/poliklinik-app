@@ -20,7 +20,7 @@ class PeriksaPasienController extends Controller
             ->whereHas('jadwalPeriksa', function ($query) use ($dokterId) {
                 $query->where('id_dokter', $dokterId);
             })
-            ->orderBy('no_antri')
+            ->orderBy('no_antrian')
             ->get();
 
         return view('dokter.periksa-pasien.index', compact('daftarPasien'));

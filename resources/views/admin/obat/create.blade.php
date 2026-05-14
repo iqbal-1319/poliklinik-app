@@ -1,4 +1,4 @@
-<x-layouts.app title="Tambah Obat">
+<x-app-layout title="Tambah Obat">
 
     {{-- Header --}}
     <div class="flex items-center gap-3 mb-6">
@@ -77,7 +77,7 @@
                 {{-- Buttons --}}
                 <div class="flex gap-3">
                     <button type="submit" class="px-6 py-2.5 rounded-xl bg-primary 
-                               hover:bg-primary/90 text-white 
+                               hover:bg-primary/90 text-slate-600 
                                font-semibold text-sm transition">
                         <i class="fas fa-save mr-1"></i>
                         Simpan
@@ -95,4 +95,4 @@
         </div>
     </div>
 
-</x-layouts.app>
+    </x-app-layout>

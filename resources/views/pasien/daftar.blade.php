@@ -1,4 +1,4 @@
-<x-layouts.app title="Daftar Poli">
+<x-app-layout title="Daftar Poli">
 
     <div class="flex items-center justify-center px-4">
         <div class="w-full max-w-3xl">
@@ -128,4 +128,4 @@
         })
     </script>
     @endpush
-</x-layouts.app>
+    </x-app-layout>

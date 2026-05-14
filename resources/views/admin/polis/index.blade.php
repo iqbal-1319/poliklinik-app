@@ -1,4 +1,4 @@
-<x-layouts.app title="Data Poli">
+<x-app-layout ... title="Data Poli">
 
     {{-- Header --}}
     <div class="flex items-center justify-between mb-6">
@@ -92,4 +92,4 @@
         </div>
     </div>
 
-</x-layouts.app>
+    </x-app-layout>

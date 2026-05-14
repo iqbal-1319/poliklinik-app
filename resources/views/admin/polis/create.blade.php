@@ -1,4 +1,4 @@
-<x-layouts.app title="Tambah Poli">
+<x-app-layout title="Tambah Poli">
 
     {{-- Header --}}
     <div class="flex items-center gap-3 mb-6">
@@ -79,4 +79,4 @@
         </div>
     </div>
 
-</x-layouts.app>
+    </x-app-layout>
