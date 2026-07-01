@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('detail_periksa', function (Blueprint $table) {
             $table->id();
             // Menghubungkan ke tabel periksa
-            $table->foreignId('id_periksa')->constrained('periksa')->cascadeOnDelete();
+            $table->foreignId('id_periksa')->constrained('periksa'); 
             // Menghubungkan ke tabel obat
-            $table->foreignId('id_obat')->constrained('obat')->cascadeOnDelete();
+            $table->foreignId('id_obat')->constrained('obat');
+            $table->integer('jumlah'); 
             $table->timestamps();
         });
     }

@@ -22,15 +22,21 @@ Route::post('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // GROUP ADMIN
+// GROUP ADMIN
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
-    })->name('admin.dashboard'); // Cukup satu name saja
+    })->name('admin.dashboard'); 
 
     Route::resource('polis', AdminPoliController::class);
     Route::resource('dokter', DokterController::class);
     Route::resource('pasien', PasienController::class);
+    
+    // CRUD Obat bawaan
     Route::resource('obat', ObatController::class);
+    
+    // TAMBAHKAN ROUTE CUSTOM INI UNTUK MANAJEMEN STOK OBAT MANUAL (Poin a.1 Capstone)
+    Route::post('/obat/{id}/update-stok', [ObatController::class, 'updateStok'])->name('obat.update-stok');
 });
 
 // GROUP DOKTER

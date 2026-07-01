@@ -27,7 +27,8 @@
                     </div>
                     <div class="flex gap-2">
                         <span class="w-36 text-slate-500 font-medium">No. Antrian</span>
-                        <span class="text-slate-800">{{ $periksa->daftarPoli->no_antrian }}</span>
+                        {{-- SUDAH DISESUAIKAN: Menggunakan no_antri --}}
+                        <span class="text-slate-800">{{ $periksa->daftarPoli->no_antri }}</span>
                     </div>
                     <div class="flex gap-2">
                         <span class="w-36 text-slate-500 font-medium">Keluhan</span>
@@ -45,8 +46,7 @@
                     </div>
                     <div class="flex gap-2">
                         <span class="w-36 text-slate-500 font-medium">Tanggal Periksa</span>
-                        <span class="text-slate-800">{{ \Carbon\Carbon::parse($periksa->tgl_periksa)->format('d/m/Y
-                            H:i') }}</span>
+                        <span class="text-slate-800">{{ \Carbon\Carbon::parse($periksa->tgl_periksa)->format('d/m/Y H:i') }}</span>
                     </div>
                 </div>
             </div>
@@ -84,9 +84,8 @@
                             @foreach($periksa->detailPeriksas as $index => $detail)
                             <tr class="hover:bg-slate-50 transition">
                                 <td class="px-6 py-4 text-slate-500">{{ $index + 1 }}</td>
-                                <td class="px-6 py-4 font-semibold text-slate-800">{{ $detail->obat->nama_obat }}</td>
-                                <td class="px-6 py-4 text-slate-500">Rp {{ number_format($detail->obat->harga, 0, ',',
-                                    '.') }}</td>
+                                <td class="px-6 py-4 font-semibold text-slate-800">{{ optional($detail->obat)->nama_obats ?? optional($detail->obat)->nama_obat ?? 'Obat Tidak Ditemukan' }}</td>
+                                <td class="px-6 py-4 text-slate-500">Rp {{ number_format(optional($detail->obat)->harga ?? 0, 0, ',', '.') }}</td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -112,4 +111,4 @@
 
     </div>
 
-    </x-app-layout>
+</x-app-layout>

@@ -1,10 +1,14 @@
 <?php
+
 namespace App\Models;
+
 use Illuminate\Database\Eloquent\Model;
 
 class Obat extends Model {
     protected $table = 'obat';
-    protected $fillable = ['nama_obat', 'kemasan', 'harga'];
+    
+    // Tambahkan 'stok' di dalam array fillable di bawah ini
+    protected $fillable = ['nama_obat', 'kemasan', 'harga', 'stok'];
 
     public function detailPeriksas() {
         return $this->hasMany(DetailPeriksa::class, 'id_obat');

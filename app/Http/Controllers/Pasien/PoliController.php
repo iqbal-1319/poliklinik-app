@@ -34,11 +34,12 @@ class PoliController extends Controller
         ]);
 
         $jumlahSudahDaftar = DaftarPoli::where('id_jadwal', $request->id_jadwal)->count();
+        
         $daftar = DaftarPoli::create([
             'id_pasien' => $request->id_pasien,
             'id_jadwal' => $request->id_jadwal,
             'keluhan' => $request->keluhan,
-            'no_antrian' => $jumlahSudahDaftar + 1,
+            'no_antri' => $jumlahSudahDaftar + 1, // <-- SUDAH DIUBAH JADI no_antri
         ]);
 
         return redirect()->back()->with('message', 'Berhasil Mendaftar ke Poli')->with('type', 'success');
